@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Posts actions: CREATE_POSTS 1`] = `
+Object {
+  "payload": undefined,
+  "type": "CREATE_POSTS",
+}
+`;
+
+exports[`Posts actions: FETCH_POSTS 1`] = `
+Object {
+  "type": "FETCH_POSTS",
+}
+`;
+
+exports[`Posts actions: FETCH_POSTS_FAIL 1`] = `
+Object {
+  "error": true,
+  "payload": undefined,
+  "type": "FETCH_POSTS_FAIL",
+}
+`;
+
+exports[`Posts actions: FETCH_POSTS_SUCCESS 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "author": Object {
+        "avatar": "https://lab.lectrum.io/redux/api/image/zgthxt3betpy/LX9h3dCJ7W.jpg",
+        "firstName": "Jubei",
+        "id": "5b16369b7e057d0d90ecf1fe",
+        "lastName": "Kibagami",
+      },
+      "comment": "Nothing",
+      "created": 1528184400,
+      "id": "5b163e507e057d6e2cecf203",
+      "likes": Array [
+        Object {
+          "firstName": "Александр",
+          "id": "5b140df97e057d69eaecf021",
+          "lastName": "Коник",
+        },
+      ],
+    },
+  ],
+  "type": "FETCH_POSTS_SUCCESS",
+}
+`;
+
+exports[`Posts actions: LIKE_POST 1`] = `
+Object {
+  "payload": undefined,
+  "type": "LIKE_POST",
+}
+`;
+
+exports[`Posts actions: REMOVE_POSTS 1`] = `
+Object {
+  "payload": undefined,
+  "type": "REMOVE_POSTS",
+}
+`;
+
+exports[`Posts actions: UNLIKE_POST 1`] = `
+Object {
+  "payload": undefined,
+  "type": "UNLIKE_POST",
+}
+`;

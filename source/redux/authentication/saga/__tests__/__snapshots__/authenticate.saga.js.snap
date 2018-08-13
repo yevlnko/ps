@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authenticate saga: should handle !== 200 response status 1`] = `
+Object {
+  "CALL": Object {
+    "args": Array [],
+    "context": Object {
+      "json": [MockFunction],
+      "status": 400,
+    },
+    "fn": [MockFunction],
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle !== 200 response status 2`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "error": true,
+      "payload": [Error: TEST_ERROR_MESSAGE.],
+      "type": "SIGNUP_FAIL",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle !== 200 response status 3`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "type": "INITIALIZE_SUCCESS",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle === 401 status 1`] = `
+Object {
+  "CALL": Object {
+    "args": Array [],
+    "context": Object {
+      "json": [MockFunction],
+      "status": 401,
+    },
+    "fn": [MockFunction],
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle === 401 status 2`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "type": "INITIALIZE_SUCCESS",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle 200 response status 1`] = `
+Object {
+  "CALL": Object {
+    "args": Array [],
+    "context": Object {
+      "json": [MockFunction],
+      "status": 200,
+    },
+    "fn": [MockFunction],
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle 200 response status 2`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "type": "AUTHENTICATE_SUCCESS",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle 200 response status 3`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "payload": Object {
+        "avatar": "TEST_AVATAR",
+        "firstName": "Walter",
+        "id": "TEST_ID",
+        "lastName": "White",
+        "token": "TEST_TOKEN",
+      },
+      "type": "FILL_PROFILE",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle 200 response status 4`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "external": true,
+      "model": "forms.user.profile.firstName",
+      "multi": false,
+      "silent": false,
+      "type": "rrf/change",
+      "value": "Walter",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle 200 response status 5`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "external": true,
+      "model": "forms.user.profile.lastName",
+      "multi": false,
+      "silent": false,
+      "type": "rrf/change",
+      "value": "White",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle 200 response status 6`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "type": "INITIALIZE_SUCCESS",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle 401 status 1`] = `
+Object {
+  "CALL": Object {
+    "args": Array [],
+    "context": Object {
+      "json": [MockFunction],
+      "status": 401,
+    },
+    "fn": [MockFunction],
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should handle 401 status 2`] = `
+Object {
+  "PUT": Object {
+    "action": Object {
+      "type": "INITIALIZE_SUCCESS",
+    },
+    "channel": null,
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
+
+exports[`authenticate saga: should yield fetch 1`] = `
+Object {
+  "CALL": Object {
+    "args": Array [
+      "https://lab.lectrum.io/redux/api/user/login",
+      Object {
+        "body": "{\\"token\\":\\"TEST_TOKEN\\"}",
+        "headers": Object {
+          "Content-Type": "application/json",
+        },
+        "method": "POST",
+      },
+    ],
+    "context": null,
+    "fn": [MockFunction],
+  },
+  Symbol(@@redux-saga/IO): true,
+}
+`;
