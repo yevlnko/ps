@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter as Router } from 'react-router-redux';
 
+
 // Instruments
 import './theme/init';
 import { store, history } from "./init/store";
