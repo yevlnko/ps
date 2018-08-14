@@ -1,12 +1,12 @@
 // Core
-import React, { Component } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { Component } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 // Instruments
-import Styles from './styles.m.css';
+import Styles from "./styles.m.css";
 
 // Components
-import { Composer, Catcher, Post, Counter } from 'components';
+import { Composer, Catcher, Post, Counter } from "components";
 
 export default class Posts extends Component {
     componentDidMount () {
@@ -26,16 +26,16 @@ export default class Posts extends Component {
                         exit:        Styles.postOutStart,
                         exitActive:  Styles.postOutEnd,
                     } }
-                    key = { post.get('id') }
+                    key = { post.get("id") }
                     timeout = { { enter: 400, exit: 500 } }>
                     <Catcher>
                         <Post
                             actions = { actions }
-                            author = { post.get('author') }
-                            comment = { post.get('comment') }
-                            created = { post.get('created') }
-                            id = { post.get('id') }
-                            likes = { post.get('likes') }
+                            author = { post.get("author") }
+                            comment = { post.get("comment") }
+                            created = { post.get("created") }
+                            id = { post.get("id") }
+                            likes = { post.get("likes") }
                             profile = { profile }
                         />
                     </Catcher>
@@ -45,7 +45,10 @@ export default class Posts extends Component {
 
         return (
             <section className = { Styles.wall }>
-                <Composer createPost = { actions.createPostAsync } profile = { profile } />
+                <Composer
+                    createPost = { actions.createPostAsync }
+                    profile = { profile }
+                />
                 <Counter count = { posts.size } />
                 <TransitionGroup>{posts}</TransitionGroup>
             </section>

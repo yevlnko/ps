@@ -1,14 +1,14 @@
 // Core
-import React, { Component } from 'react';
-import { Form, Errors, Control } from 'react-redux-form';
-import cx from 'classnames';
+import React, { Component } from "react";
+import { Form, Errors, Control } from "react-redux-form";
+import cx from "classnames";
 
 // Instruments
-import Styles from './styles.m.css';
-import { validateEmail, validateLength } from 'instruments/validators';
+import Styles from "./styles.m.css";
+import { validateEmail, validateLength } from "instruments/validators";
 
 // Components
-import { Input } from 'components';
+import { Input } from "components";
 
 export default class LoginForm extends Component {
     _handleSubmit = (user) => {
@@ -33,7 +33,7 @@ export default class LoginForm extends Component {
                 onSubmit = { this._handleSubmit }>
                 <Errors
                     messages = { {
-                        valid: 'An email should a have a valid shape',
+                        valid: "An email should a have a valid shape",
                     } }
                     model = 'forms.login.email'
                     show = { ({ submitFailed, touched, errors }) =>
@@ -85,7 +85,7 @@ export default class LoginForm extends Component {
                     className = { buttonStyle }
                     disabled = { isAuthFetching }
                     type = 'submit'>
-                    {isAuthFetching ? 'Working...' : 'Log In'}
+                    {isAuthFetching ? "Working..." : "Log In"}
                 </button>
             </Form>
         );

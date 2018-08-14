@@ -1,5 +1,5 @@
 // Core
-import { Map } from 'immutable';
+import { Map } from "immutable";
 
 // Instruments
 import { types } from "./types";
@@ -13,11 +13,10 @@ export const authReducer = (state = initialState, action) => {
         case types.LOGIN_SUCCESS:
         case types.SIGNUP_SUCCESS:
         case types.AUTHENTICATE_SUCCESS:
-            return state.set('isAuthenticated', true);
+            return state.set("isAuthenticated", true);
 
         case types.LOGOUT_SUCCESS:
-            return state.set('isAuthenticated', false);
-
+            return state.set("isAuthenticated", false);
 
         default:
             return state;

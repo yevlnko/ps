@@ -1,12 +1,12 @@
 // Coret
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import cx from 'classnames';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import cx from "classnames";
+import { connect } from "react-redux";
 
 // Instruments
-import Styles from './styles.m.css';
-import { book } from 'navigation/book';
+import Styles from "./styles.m.css";
+import { book } from "navigation/book";
 
 import { authActions } from "redux/authentication/actions";
 
@@ -16,13 +16,16 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
     return {
-        isAuthenticated: state.authentication.get('isAuthenticated'),
-        isOnline:        state.ui.get('isOnline'),
+        isAuthenticated: state.authentication.get("isAuthenticated"),
+        isOnline:        state.ui.get("isOnline"),
         profile:         state.profile,
     };
 };
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(
+    mapStateToProps,
+    mapDispatchToProps
+)
 export default class Navigation extends Component {
     _getNavigation = () => {
         const { isAuthenticated, profile } = this.props;
@@ -30,8 +33,8 @@ export default class Navigation extends Component {
         return isAuthenticated ?
             <>
                 <NavLink activeClassName = { Styles.active } to = { book.profile }>
-                    <img src = { profile.get('avatar') } />
-                    {profile.get('firstName')}
+                    <img src = { profile.get("avatar") } />
+                    {profile.get("firstName")}
                 </NavLink>
                 <NavLink activeClassName = { Styles.active } to = { book.feed }>
                     Feed
@@ -65,7 +68,7 @@ export default class Navigation extends Component {
         return (
             <section className = { Styles.navigation }>
                 <div className = { statusStyle }>
-                    <div>{isOnline ? 'Online' : 'Offline'}</div>
+                    <div>{isOnline ? "Online" : "Offline"}</div>
                     <span />
                 </div>
                 {navigation}

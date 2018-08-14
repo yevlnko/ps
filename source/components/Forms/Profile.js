@@ -1,16 +1,16 @@
 // Core
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Form, Errors, Control } from 'react-redux-form';
-import cx from 'classnames';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Form, Errors, Control } from "react-redux-form";
+import cx from "classnames";
 
 // Instruments
-import Styles from './styles.m.css';
-import { validateLength } from 'instruments/validators';
-import { book } from 'navigation/book';
+import Styles from "./styles.m.css";
+import { validateLength } from "instruments/validators";
+import { book } from "navigation/book";
 
 // Components
-import { Input } from 'components';
+import { Input } from "components";
 
 export default class Profile extends Component {
     _getCancelUpdateButton = () => {
@@ -40,7 +40,7 @@ export default class Profile extends Component {
 
         return isProfileEditing || disabled ? (
             <button className = { buttonStyle } disabled = { disabled } type = 'submit'>
-                {disabled ? 'Working...' : 'Update Profile'}
+                {disabled ? "Working..." : "Update Profile"}
             </button>
         ) : (
             <button
@@ -97,15 +97,15 @@ export default class Profile extends Component {
                 className = { Styles.form }
                 model = 'forms.user.profile'
                 onSubmit = { this._handleSubmit }>
-                <h1>Welcome, {profile.get('firstName')}</h1>
-                <img src = { profile.get('avatar') } />
+                <h1>Welcome, {profile.get("firstName")}</h1>
+                <img src = { profile.get("avatar") } />
                 <Control.file
                     disabled = { disabled }
                     model = 'forms.user.profile.avatar'
                 />
                 <Errors
                     messages = { {
-                        valid: 'A first name should be at least 1 symbol long',
+                        valid: "A first name should be at least 1 symbol long",
                     } }
                     model = 'forms.user.profile.firstName'
                     show = { ({ submitFailed, touched, errors }) =>
@@ -125,7 +125,7 @@ export default class Profile extends Component {
                 />
                 <Errors
                     messages = { {
-                        valid: 'A last name should be at least 1 symbol long',
+                        valid: "A last name should be at least 1 symbol long",
                     } }
                     model = 'forms.user.profile.lastName'
                     show = { ({ submitFailed, touched, errors }) =>

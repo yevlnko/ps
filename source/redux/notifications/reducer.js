@@ -1,5 +1,5 @@
 // Core
-import { List } from 'immutable';
+import { List } from "immutable";
 
 // Instruments
 import { types } from "./types";

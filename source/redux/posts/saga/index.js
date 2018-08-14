@@ -1,4 +1,4 @@
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery } from "redux-saga/effects";
 
 // Instruments
 import { types } from "redux/posts/types";

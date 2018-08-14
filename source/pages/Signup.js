@@ -1,6 +1,6 @@
 // Core
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 // Components
 import {
@@ -9,7 +9,7 @@ import {
     Navigation,
     Catcher,
     SignupForm
-} from 'components';
+} from "components";
 
 import { authActions } from "redux/authentication/actions";
 
@@ -19,11 +19,14 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
     return {
-        isAuthFetching: state.ui.get('isAuthFetching'),
+        isAuthFetching: state.ui.get("isAuthFetching"),
     };
 };
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(
+    mapStateToProps,
+    mapDispatchToProps
+)
 export default class Signup extends Component {
     render () {
         const { isAuthFetching } = this.props;

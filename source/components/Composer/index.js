@@ -1,12 +1,12 @@
 // Core
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // Instruments
-import Styles from './styles.m.css';
+import Styles from "./styles.m.css";
 
 export default class Composer extends Component {
     state = {
-        comment: '',
+        comment: "",
     };
 
     _handleSubmit = (event) => {
@@ -24,7 +24,7 @@ export default class Composer extends Component {
         this.props.createPost(comment);
 
         this.setState(() => ({
-            comment: '',
+            comment: "",
         }));
     };
 
@@ -35,7 +35,7 @@ export default class Composer extends Component {
     };
 
     _handleTextareaKeyPress = (event) => {
-        if (event.key === 'Enter') {
+        if (event.key === "Enter") {
             event.preventDefault();
             this._createPost();
         }
@@ -47,11 +47,11 @@ export default class Composer extends Component {
 
         return (
             <section className = { Styles.composer }>
-                <img src = { profile.get('avatar') } />
+                <img src = { profile.get("avatar") } />
                 <form onSubmit = { this._handleSubmit }>
                     <textarea
                         placeholder = { `What's on your mind, ${profile.get(
-                            'firstName'
+                            "firstName"
                         )}?` }
                         value = { comment }
                         onChange = { this._handleTextareaChange }

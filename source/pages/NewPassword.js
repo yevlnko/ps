@@ -1,6 +1,6 @@
 // Core
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 // Components
 import {
@@ -9,12 +9,11 @@ import {
     Navigation,
     Catcher,
     NewPasswordForm
-} from 'components';
+} from "components";
 
 // Instruments
 import { profileActionsAsync } from "redux/profile/saga/asyncActions";
 import { uiActions } from "redux/ui/actions";
-
 
 const mapDispatchToProps = {
     setPasswordEditingState: uiActions.setPasswordEditingState,
@@ -23,16 +22,18 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
     return {
-        isPasswordEditing:   state.ui.get('isPasswordEditing'),
-        pisPasswordFetching: state.ui.get('pisPasswordFetching'),
+        isPasswordEditing:   state.ui.get("isPasswordEditing"),
+        pisPasswordFetching: state.ui.get("pisPasswordFetching"),
     };
 };
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(
+    mapStateToProps,
+    mapDispatchToProps
+)
 export default class NewPassword extends Component {
     render () {
         const { pisPasswordFetching } = this.props;
-
 
         return (
             <>

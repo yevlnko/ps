@@ -1,18 +1,18 @@
 // Core
-import React, { Component } from 'react';
-import moment from 'moment';
+import React, { Component } from "react";
+import moment from "moment";
 
 // Instruments
-import Styles from './styles.m.css';
+import Styles from "./styles.m.css";
 
 // Components
-import Like from 'components/Like';
+import Like from "components/Like";
 
 export default class Post extends Component {
     _getCross = () => {
         const { profile, author } = this.props;
 
-        return profile.get('id') === author.get('id') ? (
+        return profile.get("id") === author.get("id") ? (
             <span className = { Styles.cross } onClick = { this._removePost } />
         ) : null;
     };
@@ -39,9 +39,9 @@ export default class Post extends Component {
         return (
             <section className = { Styles.post }>
                 {cross}
-                <img src = { author.get('avatar') } />
-                <a>{`${author.get('firstName')} ${author.get('lastName')}`}</a>
-                <time>{moment.unix(created).format('MMMM D h:mm:ss a')}</time>
+                <img src = { author.get("avatar") } />
+                <a>{`${author.get("firstName")} ${author.get("lastName")}`}</a>
+                <time>{moment.unix(created).format("MMMM D h:mm:ss a")}</time>
                 <p>{comment}</p>
                 <Like
                     actions = { actions }

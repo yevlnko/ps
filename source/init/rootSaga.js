@@ -1,11 +1,11 @@
 // Core
-import { all } from 'redux-saga/effects';
+import { all } from "redux-saga/effects";
 
 // Instruments
-import { postsWatchers } from 'redux/posts/saga';
-import { authWatchers } from 'redux/authentication/saga';
-import { uiWatchers } from 'redux/ui/saga';
-import { usersWatchers } from 'redux/users/saga';
+import { postsWatchers } from "redux/posts/saga";
+import { authWatchers } from "redux/authentication/saga";
+import { uiWatchers } from "redux/ui/saga";
+import { usersWatchers } from "redux/users/saga";
 import { profileWatchers } from "redux/profile/saga/index";
 
 export function* rootSaga () {

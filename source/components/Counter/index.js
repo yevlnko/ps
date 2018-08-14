@@ -1,8 +1,8 @@
 // Core
-import React from 'react';
+import React from "react";
 
 // Instruments
-import Styles from './styles.m.css';
+import Styles from "./styles.m.css";
 
 const Counter = ({ count }) => (
     <section className = { Styles.counter }>Posts count: {count}</section>

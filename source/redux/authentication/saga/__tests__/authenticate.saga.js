@@ -1,5 +1,5 @@
 // Core
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from "redux-saga/utils";
 
 // Instruments
 import { authActions } from "redux/authentication/actions";
@@ -8,25 +8,22 @@ import { callAuthenticateWorker } from "../workers/authenticate";
 const authenticateActions = authActions.authenticate(__.token);
 const saga = cloneableGenerator(callAuthenticateWorker)(authenticateActions);
 
-describe('authenticate saga:', () => {
-
-    test('should yield fetch', () => {
-        expect(
-            saga.next().value
-        ).toMatchSnapshot();
+describe("authenticate saga:", () => {
+    test("should yield fetch", () => {
+        expect(saga.next().value).toMatchSnapshot();
     });
 
-    test('should handle 401 status', () => {
+    test("should handle 401 status", () => {
         const clone = saga.clone();
 
-        localStorage.setItem('token', __.token);
+        localStorage.setItem("token", __.token);
 
         // should yield transform data
         expect(clone.next(__.fetchResponseFail).value).toMatchSnapshot();
 
         // should remove token from localStorage
         expect(clone.next(__.responseDataFail).value).toBeUndefined();
-        expect(localStorage.getItem('token')).toBeNull();
+        expect(localStorage.getItem("token")).toBeNull();
 
         // should call INITIALIZE_SUCCESS
         expect(clone.next().value).toMatchSnapshot();
@@ -36,7 +33,7 @@ describe('authenticate saga:', () => {
         expect(clone.next().done).toBe(true);
     });
 
-    test('should handle !== 200 response status', () => {
+    test("should handle !== 200 response status", () => {
         const clone = saga.clone();
 
         const responseStatus400 = { ...__.fetchResponseFail, status: 400 };
@@ -54,8 +51,7 @@ describe('authenticate saga:', () => {
         expect(clone.next().done).toBe(true);
     });
 
-
-    test('should handle 200 response status', () => {
+    test("should handle 200 response status", () => {
         // should yield transformed data
         expect(saga.next(__.fetchResponseSuccess).value).toMatchSnapshot();
 
@@ -74,9 +70,7 @@ describe('authenticate saga:', () => {
         // should yield initializeSuccess
         expect(saga.next().value).toMatchSnapshot();
 
-
         // should finish
         expect(saga.next().done).toBe(true);
     });
-
 });

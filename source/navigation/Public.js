@@ -1,12 +1,12 @@
 // Core
-import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router';
+import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router";
 
 // Instruments
-import { book } from './book';
+import { book } from "./book";
 
 // Pages
-import { Login, Signup } from 'pages';
+import { Login, Signup } from "pages";
 
 export default class Public extends Component {
     render () {

@@ -1,6 +1,6 @@
 // Instruments
 import { types } from "./types";
-import { v4 } from 'uuid';
+import { v4 } from "uuid";
 
 export const notificationsActions = Object.freeze({
     showNotification: (error) => ({

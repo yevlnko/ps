@@ -1,14 +1,14 @@
 // Core
-import React, { Component } from 'react';
-import { Form, Errors } from 'react-redux-form';
-import cx from 'classnames';
+import React, { Component } from "react";
+import { Form, Errors } from "react-redux-form";
+import cx from "classnames";
 
 // Instruments
-import Styles from './styles.m.css';
-import { validateEmail, validateLength } from 'instruments/validators';
+import Styles from "./styles.m.css";
+import { validateEmail, validateLength } from "instruments/validators";
 
 // Components
-import { Input } from 'components';
+import { Input } from "components";
 
 export default class SignupForm extends Component {
     _handleSubmit = (user) => {
@@ -34,7 +34,7 @@ export default class SignupForm extends Component {
                 <Errors
                     messages = { {
                         valid:
-                            'Your first name should be at least 1 symbol long',
+                            "Your first name should be at least 1 symbol long",
                     } }
                     model = 'forms.signup.firstName'
                     show = { ({ submitFailed, touched, errors }) =>
@@ -56,7 +56,7 @@ export default class SignupForm extends Component {
                 <Errors
                     messages = { {
                         valid:
-                            'Your last name should be at least 1 symbol long',
+                            "Your last name should be at least 1 symbol long",
                     } }
                     model = 'forms.signup.lastName'
                     show = { ({ submitFailed, touched, errors }) =>
@@ -77,7 +77,7 @@ export default class SignupForm extends Component {
                 />
                 <Errors
                     messages = { {
-                        valid: 'Please provide a valid email',
+                        valid: "Please provide a valid email",
                     } }
                     model = 'forms.signup.email'
                     show = { ({ submitFailed, touched, errors }) =>
@@ -142,7 +142,7 @@ export default class SignupForm extends Component {
                     className = { buttonStyle }
                     disabled = { isAuthFetching }
                     type = 'submit'>
-                    {isAuthFetching ? 'Working...' : 'Create Account'}
+                    {isAuthFetching ? "Working..." : "Create Account"}
                 </button>
             </Form>
         );

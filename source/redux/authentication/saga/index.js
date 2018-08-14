@@ -1,4 +1,4 @@
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery } from "redux-saga/effects";
 
 // Instruments
 import { types } from "redux/authentication/types";
@@ -6,7 +6,6 @@ import { callSignUpWorker } from "./workers/signup";
 import { callLoginWorker } from "./workers/login";
 import { callAuthenticateWorker } from "./workers/authenticate";
 import { callLogoutWorker } from "./workers/logout";
-
 
 export const authWatchers = Object.freeze({
     * watchSignUp () {

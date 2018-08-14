@@ -1,24 +1,22 @@
 // Core
-import { call, put, select } from 'redux-saga/effects';
+import { call, put, select } from "redux-saga/effects";
 
 // Instruments
-import { api } from 'config';
+import { api } from "config";
 import { postsActions } from "redux/posts/actions";
 import { uiActions } from "redux/ui/actions";
 
-
-export function* callCreatePostsWorker ({ payload:comment }) {
-
+export function* callCreatePostsWorker ({ payload: comment }) {
     try {
         yield put(uiActions.setPostFetchingState(true));
 
-        const token = yield select((state) => state.profile.get('token'));
+        const token = yield select((state) => state.profile.get("token"));
 
         const response = yield call(fetch, `${api}/feed`, {
-            method:  'POST',
+            method:  "POST",
             headers: {
-                'Authorization': token,
-                'Content-Type':  'application/json',
+                Authorization:  token,
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({ comment }),
         });
@@ -29,11 +27,9 @@ export function* callCreatePostsWorker ({ payload:comment }) {
             throw new Error(message);
         }
         yield put(postsActions.createPost(post));
-
     } catch (err) {
-        yield put(uiActions.emmitError(err, 'createPostsWorker'));
+        yield put(uiActions.emmitError(err, "createPostsWorker"));
     } finally {
         yield put(uiActions.setPostFetchingState(false));
     }
-
 }

@@ -1,14 +1,14 @@
 // Core
-import { Map } from 'immutable';
+import { Map } from "immutable";
 
 // Instruments
 import { types } from "./types";
 
 const initialState = Map({
-    id:        '',
-    avatar:    '',
-    firstName: '',
-    lastName:  '',
+    id:        "",
+    avatar:    "",
+    firstName: "",
+    lastName:  "",
 });
 
 export const profileReducer = (state = initialState, action) => {
@@ -20,8 +20,7 @@ export const profileReducer = (state = initialState, action) => {
             return initialState;
 
         case types.UPDATE_AVATAR:
-            return state.set('avatar', action.payload);
-
+            return state.set("avatar", action.payload);
 
         default:
             return state;

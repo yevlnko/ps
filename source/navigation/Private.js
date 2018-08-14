@@ -1,24 +1,23 @@
 // Core
-import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router';
+import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router";
 
 // Instruments
-import { book } from './book';
+import { book } from "./book";
 import { socket } from "init/socket";
 
 // Pages
-import { Feed, Profile, NewPassword } from 'pages';
+import { Feed, Profile, NewPassword } from "pages";
 
 export default class Private extends Component {
-
     componentDidMount () {
         this.props.listenPosts();
     }
 
     componentWillUnmount () {
-        socket.removeListener('create');
-        socket.removeListener('remove');
-        socket.removeListener('like');
+        socket.removeListener("create");
+        socket.removeListener("remove");
+        socket.removeListener("like");
     }
 
     render () {

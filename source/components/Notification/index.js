@@ -1,10 +1,10 @@
 // Core
-import React, { Component } from 'react';
-import { Transition } from 'react-transition-group';
-import gsap from 'gsap';
+import React, { Component } from "react";
+import { Transition } from "react-transition-group";
+import gsap from "gsap";
 
 // Instruments
-import Styles from './styles.m.css';
+import Styles from "./styles.m.css";
 
 export default class Notification extends Component {
     state = {

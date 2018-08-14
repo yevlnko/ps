@@ -1,5 +1,5 @@
 // Core
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from "redux";
 
 // Instruments
 import { rootReducer } from "./rootReducer";
@@ -11,7 +11,7 @@ const composeEnhancers = dev && devTools ? devTools : compose;
 
 const store = createStore(
     rootReducer,
-    composeEnhancers(applyMiddleware(...middleware)),
+    composeEnhancers(applyMiddleware(...middleware))
 );
 
 export { store, history };

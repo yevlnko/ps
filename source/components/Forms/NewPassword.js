@@ -1,16 +1,16 @@
 // Core
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Form, Errors } from 'react-redux-form';
-import cx from 'classnames';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Form, Errors } from "react-redux-form";
+import cx from "classnames";
 
 // Instruments
-import Styles from './styles.m.css';
-import { validateLength } from 'instruments/validators';
-import { book } from 'navigation/book';
+import Styles from "./styles.m.css";
+import { validateLength } from "instruments/validators";
+import { book } from "navigation/book";
 
 // Components
-import { Input } from 'components';
+import { Input } from "components";
 
 export default class Profile extends Component {
     _getCancelUpdateButton = () => {
@@ -37,7 +37,7 @@ export default class Profile extends Component {
                 className = { buttonStyle }
                 disabled = { isProfileFetching }
                 type = 'submit'>
-                {isProfileFetching ? 'Working...' : 'Update Password'}
+                {isProfileFetching ? "Working..." : "Update Password"}
             </button>
         ) : (
             <button

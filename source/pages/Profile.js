@@ -1,7 +1,6 @@
 // Core
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 // Components
 import {
@@ -10,7 +9,7 @@ import {
     Navigation,
     Catcher,
     ProfileForm
-} from 'components';
+} from "components";
 
 // Instruments
 import { profileActionsAsync } from "redux/profile/saga/asyncActions";
@@ -23,14 +22,17 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
     return {
-        isProfileFetching: state.ui.get('isProfileFetching'),
-        isProfileEditing:  state.ui.get('isProfileEditing'),
-        isAvatarFetching:  state.ui.get('isAvatarFetching'),
+        isProfileFetching: state.ui.get("isProfileFetching"),
+        isProfileEditing:  state.ui.get("isProfileEditing"),
+        isAvatarFetching:  state.ui.get("isAvatarFetching"),
         profile:           state.profile,
     };
 };
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(
+    mapStateToProps,
+    mapDispatchToProps
+)
 export default class Profile extends Component {
     render () {
         const { isAvatarFetching, isProfileFetching } = this.props;
