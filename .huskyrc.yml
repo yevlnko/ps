@@ -1,4 +1,0 @@
----
-hooks:
-    pre-push: npm run soundcheck
-    pre-commit: npm run prettier

@@ -40,32 +40,6 @@ Object {
 }
 `;
 
-exports[`authenticate saga: should handle === 401 status 1`] = `
-Object {
-  "CALL": Object {
-    "args": Array [],
-    "context": Object {
-      "json": [MockFunction],
-      "status": 401,
-    },
-    "fn": [MockFunction],
-  },
-  Symbol(@@redux-saga/IO): true,
-}
-`;
-
-exports[`authenticate saga: should handle === 401 status 2`] = `
-Object {
-  "PUT": Object {
-    "action": Object {
-      "type": "INITIALIZE_SUCCESS",
-    },
-    "channel": null,
-  },
-  Symbol(@@redux-saga/IO): true,
-}
-`;
-
 exports[`authenticate saga: should handle 200 response status 1`] = `
 Object {
   "CALL": Object {
